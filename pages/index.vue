@@ -4,6 +4,8 @@
       <div class="text-center">
         <CsabaImage />
       </div>
+
+      <!-- Info card -->
       <v-card>
         <v-card-title class="headline">
           Csaba Szabo, Frontend engineer
@@ -54,16 +56,22 @@
           </v-btn> -->
         </v-card-actions>
       </v-card>
+
+      <!-- Projects -->
+      <ProjectGrid></ProjectGrid>
+
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import CsabaImage from '~/components/CsabaImage.vue'
+import ProjectGrid from '~/components/ProjectGrid.vue'
 
 export default {
   components: {
-    CsabaImage
+    CsabaImage,
+    ProjectGrid
   }
 }
 </script>
