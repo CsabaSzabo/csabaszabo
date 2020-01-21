@@ -4,13 +4,6 @@ module.exports = {
   mode: 'spa',
 
   /*
-   ** Generate config
-   */
-  generate: {
-    dir: 'docs'
-  },
-
-  /*
    ** Headers of the page
    */
   head: {
