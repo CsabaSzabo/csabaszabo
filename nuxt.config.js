@@ -2,6 +2,14 @@ const colors = require('vuetify/es5/util/colors').default
 
 module.exports = {
   mode: 'spa',
+
+  /*
+   ** Generate config
+   */
+  generate: {
+    dir: 'docs'
+  },
+
   /*
    ** Headers of the page
    */
