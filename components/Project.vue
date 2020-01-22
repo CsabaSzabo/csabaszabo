@@ -1,11 +1,11 @@
 <template>
 
-  <v-card>
+  <v-card class="project-card">
     <v-img
       :src="src"
       class="white--text align-end"
       gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-      height="200px"
+      height="250px"
     >
     </v-img>
 
@@ -32,7 +32,8 @@
         v-if="longDescription"
         @click="show = !show"
       >
-        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon>
+        <!-- {{ show ? 'Hide' : 'More' }} -->
+        <v-icon>{{ show ? 'mdi-chevron-up' : 'mdi-chevron-down' }}</v-icon> 
       </v-btn>
 
     </v-card-actions>
@@ -84,5 +85,10 @@ export default {
 </script>
 
 <style>
+
+.project-card {
+  max-width: 500px;
+  margin: auto;
+}
 
 </style>

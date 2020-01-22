@@ -31,10 +31,12 @@
         
       </div>
 
-      <v-container fluid>
+      <!-- Skills -->
+      <v-container fluid class="skills-section">
+        <div class="info-title text-center pb-3">Interest areas & Skills</div>
         <v-row dense>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content">
+            <v-card class="skill-card skill-card-content teal darken-2">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-monitor-cellphone</v-icon>
                 <p class="skill-title">Front-end Development</p>
@@ -61,7 +63,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content">
+            <v-card class="skill-card skill-card-content blue-grey darken-1">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-google</v-icon>
                 <p class="skill-title">Technical SEO</p>
@@ -69,10 +71,10 @@
                 <p class="skill-p-1">I like to optimise the website for organic traffic, mainly with technical SEO work.</p>
 
                 <p class="skill-card-head">Stats</p>
-                <div>Daily 0 to Daily 15k impression and 1k click in a year (villanyautok.com)</div>
-                <div>38/86/71/97 LightHouse score (villanyautok.com car list)</div>
-                <div>38/79/93/88 LightHouse score (evdb.io home)</div>
-                <div>54/88/77/90 LightHouse score (aroundsound.com home)</div>
+                <div>Daily 15k impression and 1k click in a year (villanyautok.com)</div>
+                <div>38/86/71/97 Lighthouse score (villanyautok.com)</div>
+                <div>38/79/93/88 Lighthouse score (evdb.io)</div>
+                <div>54/88/77/90 Lighthouse score (aroundsound.com)</div>
 
                 <p class="skill-card-head">Tools and Services</p>
                 <div>Google Search Console</div>
@@ -83,14 +85,14 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content">
+            <v-card class="skill-card skill-card-content deep-orange darken-3">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-google-analytics</v-icon>
                 <p class="skill-title">Analytics and Data Analysis</p>
 
                 <p class="skill-p-1">A good product/feature has no value if we cannot measure that product/feature. I believe that we should plan and implement the analytics events during the feature implementation.</p>
 
-                <p class="skill-card-head">Technologies, experience</p>
+                <p class="skill-card-head">Technologies and Experience</p>
                 <div>Google Analytics</div>
                 <div>Google Tag Manager</div>
                 <div>HotJar</div>
@@ -108,19 +110,15 @@
       </v-container>
 
       <!-- Projects -->
-      <ProjectGrid></ProjectGrid>
+      <div class="projects-section">
+        <div class="info-title text-center">My Recent Work</div>
+        <ProjectGrid></ProjectGrid>
+      </div>
 
       <!-- <p>
         Currently looking for new Web freelancer opportunities besides working on my projects. 
       </p> -->
       
-      <a href="https://github.com/CsabaSzabo" target="_blank">
-        GitHub
-      </a>
-      <br />
-      <a href="https://www.linkedin.com/in/csaba-sz/" target="_blank">
-        LinkedIn
-      </a>
 
     </v-flex>
   </v-layout>
@@ -185,6 +183,10 @@ export default {
 }
 
 /* Skill cards */
+.skills-section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
 .skill-card-content {
   padding: 16px;
   margin: 8px;
@@ -211,5 +213,9 @@ export default {
   font-weight: 700;
 }
 
+.projects-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
 
 </style>

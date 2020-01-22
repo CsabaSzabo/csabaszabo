@@ -1,11 +1,5 @@
 <template>
-  <v-app >
-    
-    <!-- App bar -->
-    <!-- <v-app-bar fixed app>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-    </v-app-bar> -->
+  <v-app>
 
     <!-- Content -->
     <v-content>
@@ -15,8 +9,28 @@
     </v-content>
 
     <!-- Footer -->
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2020</span>
+    <v-footer dark padless>
+      <v-card class="flex" flat tile>
+        <v-card-title class="footer-card-title teal darken-2">
+          <strong class="subheading mr-0 mr-sm-3 mr-md-5">Get connected with me!</strong>
+
+          <v-btn
+            v-for="socialItem in socialItems"
+            :key="socialItem"
+            class="mx-4"
+            dark
+            icon
+          >
+            <a :href="socialItem.link" target="_blank" class="a-clean">
+              <v-icon large>{{ socialItem.icon }}</v-icon>
+            </a>
+          </v-btn>
+        </v-card-title>
+
+        <v-card-text class="py-2 white--text text-center">
+          {{ new Date().getFullYear() }} — Made with <strong>Nuxt.js</strong> and <strong>Vuetify</strong>
+        </v-card-text>
+      </v-card>
     </v-footer>
 
   </v-app>
@@ -40,8 +54,25 @@ export default {
         }
       ],
       right: true,
-      title: 'Csaba Szabo'
+      title: 'Csaba Szabo',
+      socialItems: [
+        { icon: 'mdi-github-circle', link: 'https://github.com/CsabaSzabo' },
+        { icon: 'mdi-linkedin-box', link: 'https://www.linkedin.com/in/csaba-sz' },
+        { icon: 'mdi-medium', link: 'https://medium.com/@csabb' },
+        { icon: 'mdi-stack-overflow', link: 'https://stackoverflow.com/users/1173971/szab%C3%B3-csaba' },
+        { icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba' },
+      ],
     }
   }
 }
 </script>
+
+<style scoped>
+.footer-card-title {
+  justify-content: center;
+}
+.a-clean {
+  color: white;
+  text-decoration: none;
+}
+</style>
