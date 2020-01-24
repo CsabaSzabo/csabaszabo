@@ -11,7 +11,7 @@
     <!-- Footer -->
     <v-footer dark padless>
       <v-card class="flex" flat tile>
-        <v-card-title class="footer-card-title teal darken-2">
+        <v-card-title class="footer-card-title accent">
           <strong class="subheading mr-0 mr-sm-3 mr-md-5">Get connected with me!</strong>
 
           <v-btn
@@ -63,6 +63,26 @@ export default {
         { icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba' },
       ],
     }
+  },
+
+  mounted() {
+    this.initDarkMode();
+  },
+
+  methods: {
+    initDarkMode() {
+      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      if (darkMediaQuery.matches) {
+        this.$vuetify.theme.dark = true;
+      } else {
+        this.$vuetify.theme.dark = false;
+      }
+
+      darkMediaQuery.addEventListener('change', (e) => {
+        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      });
+    }
+
   }
 }
 </script>

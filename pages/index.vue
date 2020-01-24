@@ -4,9 +4,9 @@
 
       <!-- Introduction -->
       <div class="intro-section text-center">
-        <p class="intro-title">Csaba Szabo, Frontend Developer</p>
+        <p class="intro-title text--primary">Csaba Szabo, Frontend Developer</p>
         
-        <div class="intro-description">
+        <div class="intro-description text--secondary">
           I love to build websites, which are
           useable, indexable, fast, measurable and reliable.
         </div>
@@ -18,16 +18,16 @@
 
       <!-- Info section -->
       <div class="info-section">
-        <p class="info-title">Hi, I'm Csaba. Nice to meet you.</p>
+        <p class="info-title text--primary">Hi, I'm Csaba. Nice to meet you.</p>
 
-        <p class="info-text">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, Web Development in the last 2 years.</p>
+        <p class="info-text text--secondary">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, I did Web Development during the last 2 years.</p>
        
-        <div class="info-section-header">I worked in various roles:</div>
-        <div class="info-text">Web and Data Engineering (aroundsound.com, villanyautok.com)</div>
-        <div class="info-text">Product management (bankracio.hu / money.hu)</div>
-        <div class="info-text">Product management (Skyscanner)</div>
-        <div class="info-text">App release and Software engineering (Skyscanner)</div>
-        <div class="info-text">Software testing (CocktailFlow, RedBullTV, Gneo, Skyscanner apps, ...)</div>
+        <div class="info-section-header text-primary">I worked in various roles:</div>
+        <div class="info-text text--secondary">Web and Data Engineering (<a href="https://aroundsound.com/" target="_blank">aroundsound.com</a>, <a href="http://villanyautok.com/" target="_blank">villanyautok.com</a>, <a href="https://evdb.io" target="_blank">evdb.io</a>)</div>
+        <div class="info-text text--secondary">Product management (<a href="https://www.bankracio.hu/" target="_blank">bankracio.hu</a> / <a href="https://www.money.hu/" target="_blank">money.hu</a>)</div>
+        <div class="info-text text--secondary">Product management (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
+        <div class="info-text text--secondary">App release and Software engineering (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
+        <div class="info-text text--secondary">Software testing (<a href="https://cocktailflow.com/" target="_blank">CocktailFlow</a>, <a href="https://www.redbull.com/" target="_blank">RedBullTV</a>, <a href="http://gneo.co/" target="_blank">Gneo</a>, Skyscanner apps, ...)</div>
         
       </div>
 
@@ -36,10 +36,10 @@
         <div class="info-title text-center pb-3">Interest areas & Skills</div>
         <v-row dense>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content teal darken-2">
+            <v-card class="skill-card skill-card-content accent">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-monitor-cellphone</v-icon>
-                <p class="skill-title">Front-end Development</p>
+                <p class="skill-title text--primary">Front-end Development</p>
 
                 <p class="skill-p-1">I like to code and build websites, which are more than a shiny design. I like to build functional websites which the same capabilities as a desktop or mobile app.</p>
 
@@ -63,7 +63,7 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content blue-grey darken-1">
+            <v-card class="skill-card skill-card-content accent">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-google</v-icon>
                 <p class="skill-title">Technical SEO</p>
@@ -85,12 +85,12 @@
             </v-card>
           </v-col>
           <v-col cols="12" md="4">
-            <v-card class="skill-card skill-card-content deep-orange darken-3">
+            <v-card class="skill-card skill-card-content accent">
               <div class="text-center">
                 <v-icon large class="skill-icon">mdi-google-analytics</v-icon>
                 <p class="skill-title">Analytics and Data Analysis</p>
 
-                <p class="skill-p-1">A good product/feature has no value if we cannot measure that product/feature. I believe that we should plan and implement the analytics events during the feature implementation.</p>
+                <p class="skill-p-1">A good product/feature has no value if we cannot measure it. I believe that we should plan and implement the analytics events during the feature implementation, so it will be much easies to measure the performance of our product.</p>
 
                 <p class="skill-card-head">Technologies and Experience</p>
                 <div>Google Analytics</div>
@@ -143,13 +143,11 @@ export default {
   padding-bottom: 48px;
 }
 .intro-title {
-  color: #FFFFFF;
   font-weight: 800;
   line-height: 1.125;
   font-size: 2rem;
 }
 .intro-description {
-  color: #BBBBBB;
   font-weight: 300;
   line-height: 1.5;
   font-size: 1.25rem;
