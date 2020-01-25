@@ -16,8 +16,11 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
+    "firebase": "^7.7.0",
     "nuxt": "^2.0.0",
-    "nuxt-client-init-module": "^0.1.7"
+    "nuxt-client-init-module": "^0.1.7",
+    "uuidv4": "^6.0.2",
+    "vuelidate": "^0.7.5"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",

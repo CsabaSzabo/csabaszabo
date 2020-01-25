@@ -3,7 +3,7 @@
 
     <!-- Content -->
     <v-content>
-      <v-container>
+      <v-container fluid class="pr-0 pl-0">
         <nuxt />
       </v-container>
     </v-content>
@@ -11,7 +11,7 @@
     <!-- Footer -->
     <v-footer dark padless>
       <v-card class="flex" flat tile>
-        <v-card-title class="footer-card-title accent">
+        <v-card-title class="footer-card-title deep-orange ">
           <strong class="subheading mr-0 mr-sm-3 mr-md-5">Get connected with me!</strong>
 
           <v-btn
@@ -28,7 +28,7 @@
         </v-card-title>
 
         <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — Made with <strong>Nuxt.js</strong> and <strong>Vuetify</strong>
+          {{ new Date().getFullYear() }} — Made with <strong>Nuxt.js</strong> and <strong>Vuetify</strong> (my favourite frameworks)
         </v-card-text>
       </v-card>
     </v-footer>
@@ -72,16 +72,17 @@ export default {
   methods: {
     initDarkMode() {
       const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      if (darkMediaQuery.matches) {
-        this.$vuetify.theme.dark = true;
-      } else {
-        this.$vuetify.theme.dark = false;
-      }
 
       darkMediaQuery.addEventListener('change', (e) => {
         this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
       });
-    }
+
+      if (darkMediaQuery.matches) {
+        console.log('change default light to dark theme');
+        // need to set 0 sec timeout to set the dark more after mounted event, due to some bug in the framework
+        setTimeout(() => this.$vuetify.theme.dark = true, 0);
+      }
+    },
 
   }
 }

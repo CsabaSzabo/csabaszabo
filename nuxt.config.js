@@ -31,7 +31,9 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/firebase.client.js', mode: 'client' },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -63,12 +65,13 @@ module.exports = {
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      // default theme is light mode
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
-          secondary: colors.amber.darken3,
-          accent: colors.teal.lighten1,
+          secondary: colors.teal.darken2,
+          accent: colors.teal.darken4,
 
           error: colors.deepOrange.accent4,
           info: colors.grey.darken3,
@@ -77,8 +80,8 @@ module.exports = {
         },
         light: {
           primary: '#1976D2',
-          secondary: '#424242',
-          accent: '#82B1FF',
+          secondary: colors.teal.lighten2,
+          accent: colors.teal.lighten4,
 
           error: '#FF5252',
           info: '#2196F3',
