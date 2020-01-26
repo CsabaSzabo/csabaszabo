@@ -18,8 +18,8 @@
         <p class="info-text text--secondary">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, I did Web Development during the last 2 years.</p>
       
         <div class="info-section-header text-primary">I worked in various roles:</div>
-        <div class="info-text text--secondary">Web and Data Engineering (<a href="https://aroundsound.com/" target="_blank">aroundsound.com</a>, <a href="http://villanyautok.com/" target="_blank">villanyautok.com</a>, <a href="https://evdb.io" target="_blank">evdb.io</a>)</div>
-        <div class="info-text text--secondary">Product management (<a href="https://www.bankracio.hu/" target="_blank">bankracio.hu</a> / <a href="https://www.money.hu/" target="_blank">money.hu</a>)</div>
+        <div class="info-text text--secondary">Web and Data Engineering (<a href="https://aroundsound.com/" target="_blank">aroundsound.com</a>,&nbsp;<a href="http://villanyautok.com/" target="_blank">villanyautok.com</a>, <a href="https://evdb.io" target="_blank">evdb.io</a>)</div>
+        <div class="info-text text--secondary">Product management (<a href="https://www.bankracio.hu/" target="_blank">bankracio.hu</a>&nbsp;/&nbsp;<a href="https://www.money.hu/" target="_blank">money.hu</a>)</div>
         <div class="info-text text--secondary">Product management (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
         <div class="info-text text--secondary">App release and Software engineering (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
         <div class="info-text text--secondary">Software testing (<a href="https://cocktailflow.com/" target="_blank">CocktailFlow</a>, <a href="https://www.redbull.com/" target="_blank">RedBullTV</a>, <a href="http://gneo.co/" target="_blank">Gneo</a>, Skyscanner apps, ...)</div>
@@ -105,13 +105,13 @@
     </v-container>
 
     <!-- Projects -->
-    <div class="projects-section">
+    <v-container fluid class="projects-section secondary">
       <div class="info-title text-center">My Recent Work</div>
       <ProjectGrid></ProjectGrid>
-    </div>
+    </v-container>
 
     <!-- Contact me -->
-    <v-container fluid class="secondary">
+    <v-container fluid class="">
       <v-col class="contact-me-section">
         <p class="contact-me-title text--primary">Interested in working together?</p>
         <p class="contact-me-text text--secondary">I'm currently open for new projects (weekly <=20 hours) besides working on my current projects.</p>
@@ -122,7 +122,7 @@
             :error-messages="nameErrors"
             label="Name"
             required
-            outlined
+            filled
             @input="$v.name.$touch()"
             @blur="$v.name.$touch()"
           ></v-text-field>
@@ -131,7 +131,7 @@
             :error-messages="emailErrors"
             label="E-mail"
             required
-            outlined
+            filled
             @input="$v.email.$touch()"
             @blur="$v.email.$touch()"
           ></v-text-field>
@@ -141,13 +141,13 @@
             :error-messages="selectErrors"
             label="Type of project"
             required
-            outlined
+            filled
             @change="$v.selectedProject.$touch()"
             @blur="$v.selectedProject.$touch()"
           ></v-select>
           <v-textarea
             v-model="notes"
-            outlined
+            filled
             name="input-additional-notes"
             label="Additional notes"
           ></v-textarea>
@@ -230,24 +230,23 @@ export default {
   },
 
   methods: {
-    writeNewContact() {
+    async writeNewContact() {
       this.$v.$touch();
 
       // Write to DB
-      fireDb.collection("contacts").doc(uuidv4()).set({
-        name: this.name,
-        email: this.email,
-        notes: this.notes,
-        project: this.selectedProject,
-        submittedDate: new Date(),
-      })
-      .then(function() {
+      try {
+        await fireDb.collection("contacts").doc(uuidv4()).set({
+          name: this.name,
+          email: this.email,
+          notes: this.notes,
+          project: this.selectedProject,
+          submittedDate: new Date(),
+        });
         this.formSubmitted = true;
-      })
-      .catch(function(error) {
+      } catch(e) {
         this.formSubmitted = true;
-        this.formSubmittedError = error;
-      });
+        this.formSubmittedError = e;
+      }
 
     },
     clear () {
@@ -295,7 +294,7 @@ export default {
   text-align: center;
   margin: auto;
   padding-top: 64px;
-  padding-bottom: 240px;
+  padding-bottom: 64px;
 
   max-width: 700px;
 }
@@ -312,7 +311,6 @@ export default {
 
 /* Skill cards */
 .skills-section {
-  margin-top: -240px;
   padding-top: 64px;
   padding-bottom: 40px;
 }
@@ -352,7 +350,7 @@ export default {
   text-align: center;
   margin: auto;
   padding-top: 64px;
-  padding-bottom: 240px;
+  padding-bottom: 64px;
 
   max-width: 700px;
 }

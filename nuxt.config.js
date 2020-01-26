@@ -50,6 +50,14 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
 
+    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/google-tag-manager
+    ['@nuxtjs/google-tag-manager', {
+      id: 'GTM-W6D6GMG',
+      layer: 'dataLayer',
+      pageTracking: true,
+      dev: false, // disable in dev mode
+    }],
+
     // Doc: https://github.com/potato4d/nuxt-client-init-module
     'nuxt-client-init-module',
   ],
@@ -69,11 +77,11 @@ module.exports = {
       dark: false,
       themes: {
         dark: {
-          primary: colors.blue.darken2,
+          primary: colors.blue,
           secondary: colors.teal.darken2,
-          accent: colors.teal.darken4,
+          accent: colors.teal.accent4,
 
-          error: colors.deepOrange.accent4,
+          error: colors.deepOrange.accent2,
           info: colors.grey.darken3,
           success: colors.green.accent3,
           warning: colors.amber.base,
@@ -81,7 +89,7 @@ module.exports = {
         light: {
           primary: '#1976D2',
           secondary: colors.teal.lighten2,
-          accent: colors.teal.lighten4,
+          accent: colors.teal.accent4,
 
           error: '#FF5252',
           info: '#2196F3',

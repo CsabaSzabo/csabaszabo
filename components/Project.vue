@@ -18,14 +18,10 @@
 
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn outlined color="primary" @click="openWebsite" :href="link" target="_blank" :disabled="!link" class="mr-1">
-        <v-icon left>mdi-open-in-new</v-icon>Open 
-      </v-btn>
-
-      <!-- [START] Details dialog -->
+      <!-- Details dialog -->
       <v-dialog v-model="dialog" width="1152" :fullscreen="carouselFullscreen">
         <template v-slot:activator="{ on }">
-          <v-btn outlined color="secondary" v-on="on" class="ml-1">
+          <v-btn outlined color="primary" v-on="on" class="ml-1">
             <v-icon left>mdi-information-outline</v-icon>Details
           </v-btn>
         </template>
@@ -59,7 +55,11 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-      <!-- [END] Details dialog -->
+
+      <!-- Open website -->
+      <v-btn v-if="link" outlined color="accent" @click="openWebsite" :href="link" target="_blank" class="mr-1">
+        <v-icon left>mdi-open-in-new</v-icon>Open 
+      </v-btn>
 
       <v-spacer></v-spacer>
     </v-card-actions>
