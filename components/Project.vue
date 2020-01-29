@@ -27,7 +27,7 @@
         </template>
 
         <v-card>
-          <v-card-title class="headline grey lighten-2" primary-title>
+          <v-card-title class="headline secondary" primary-title>
             {{title}}
             <v-spacer></v-spacer>
             <v-icon left @click="dialog = false">mdi-close</v-icon>

@@ -3,7 +3,7 @@
 
     <!-- Introduction -->
     <div class="intro-section text-center px-3">
-      <p class="intro-title text--primary">Csaba&nbsp;Szabo, Frontend&nbsp;Developer</p>
+      <h1 class="text--primary">Csaba&nbsp;Szabo, Front-End&nbsp;Developer</h1>
       <div class="intro-description text--secondary">
         I love to build websites, which are
         useable, indexable, fast, measurable and reliable.
@@ -14,7 +14,7 @@
     <!-- Info section -->
     <v-container fluid class="secondary">
       <v-col class="info-section">
-        <p class="info-title text--primary">Hi, I'm Csaba. Nice to meet you.</p>
+        <h3 class="text--primary">Hi, I'm Csaba. Nice to meet you.</h3>
         <p class="info-text text--secondary">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, I did Web Development during the last 2 years.</p>
       
         <div class="info-section-header text-primary">I worked in various roles:</div>
@@ -28,15 +28,15 @@
 
     <!-- Skills -->
     <v-container class="skills-section">
-      <div class="info-title text-center pb-3">Interest areas & Skills</div>
+      <h2 class="text--primary text-center pb-4">Interest areas & Skills</h2>
       <v-row dense>
         <v-col cols="12" md="4">
           <v-card class="skill-card skill-card-content">
             <div class="text-center">
               <v-icon large class="skill-icon">mdi-monitor-cellphone</v-icon>
-              <p class="skill-title text--primary">Front-end Development</p>
+              <h3 class="text--primary">Front-end Development</h3>
 
-              <p class="skill-p-1">I like to code and build websites, which are more than a shiny design. I like to build functional websites which the same capabilities as a desktop or mobile app.</p>
+              <p class="skill-p-1">I like to code and build websites, which are more than a shiny design. I like to build functional websites which have the same capabilities as a desktop or mobile app.</p>
 
               <p class="skill-card-head">Technologies</p>
               <div>Vue.js, Nuxt.js</div>
@@ -61,14 +61,12 @@
           <v-card class="skill-card skill-card-content">
             <div class="text-center">
               <v-icon large class="skill-icon">mdi-google</v-icon>
-              <p class="skill-title">Technical SEO</p>
+              <h3>Technical SEO</h3>
 
-              <p class="skill-p-1">I like to optimise the website for organic traffic, mainly with technical SEO work.</p>
+              <div>I like to optimise the website for organic traffic, mainly with technical SEO work.</div>
 
               <p class="skill-card-head">Stats</p>
               <div>Daily 15k impression and 1k click in a year (villanyautok.com)</div>
-              <div>38/86/71/97 Lighthouse score (villanyautok.com)</div>
-              <div>38/79/93/88 Lighthouse score (evdb.io)</div>
               <div>54/88/77/90 Lighthouse score (aroundsound.com)</div>
 
               <p class="skill-card-head">Tools and Services</p>
@@ -83,9 +81,9 @@
           <v-card class="skill-card skill-card-content">
             <div class="text-center">
               <v-icon large class="skill-icon">mdi-google-analytics</v-icon>
-              <p class="skill-title">Analytics and Data Analysis</p>
+              <h3>Analytics and Data Analysis</h3>
 
-              <p class="skill-p-1">A good product/feature has no value if we cannot measure it. I believe that we should plan and implement the analytics events during the feature implementation, so it will be much easies to measure the performance of our product.</p>
+              <p class="skill-p-1">A good product/feature has no value if we cannot measure it. I believe that we should plan and implement the analytics events during the feature implementation, so it will be much easier to measure the performance of our product.</p>
 
               <p class="skill-card-head">Technologies and Experience</p>
               <div>Google Analytics</div>
@@ -106,15 +104,15 @@
 
     <!-- Projects -->
     <v-container fluid class="projects-section secondary">
-      <div class="info-title text-center">My Recent Work</div>
+      <h2 class="text--primary text-center">My Recent Work</h2>
       <ProjectGrid></ProjectGrid>
     </v-container>
 
     <!-- Contact me -->
     <v-container fluid class="">
       <v-col class="contact-me-section">
-        <p class="contact-me-title text--primary">Interested in working together?</p>
-        <p class="contact-me-text text--secondary">I'm currently open for new projects (weekly <=20 hours) besides working on my current projects.</p>
+        <h2 class="text--primary">Interested in working together?</h2>
+        <p class="text--secondary">I'm currently open for new projects (weekly <=20 hours) besides working on my current projects.</p>
 
         <form v-if="!formSubmitted">
           <v-text-field
@@ -157,10 +155,10 @@
           <v-btn class="secondary" @click="clear">clear</v-btn>
         </form>
         <div v-else-if="!formSubmittedError" class="pt-3">
-          <p class="contact-me-text headline text--secondary">Thanks for reaching out. I'll contact you soon, but you could write an email to csaba.szabo4[at]gmail[dot]com if it's really important.</p>
+          <p class="headline text--secondary">Thanks for reaching out. I'll contact you soon, but you could write an email to csaba.szabo4[at]gmail[dot]com if it's really important.</p>
         </div>
         <div v-else class="pt-3">
-          <p class="contact-me-text headline text--secondary">Unfortunately an error happened, I didn't get your message. <b>Please write an email to csaba.szabo4[at]gmail[dot]com</b> so I'll get your message.</p>
+          <p class="headline text--secondary">Unfortunately an error happened, I didn't get your message. <b>Please write an email to csaba.szabo4[at]gmail[dot]com</b> so I'll get your message.</p>
           <p>Error:</p>
           <code>{{formSubmittedError}}</code>
         </div>
@@ -271,18 +269,10 @@ export default {
   padding-top: 80px;
   padding-bottom: 48px;
 }
-.intro-title {
-  font-weight: 800;
-  line-height: 1.125;
-  font-size: 2rem;
-}
 .intro-description {
   font-weight: 300;
-  line-height: 1.5;
-  font-size: 1.25rem;
   max-width: 500px;
   margin: auto;
-
   padding-bottom: 24px;
 }
 .intro-description-ending {
@@ -297,10 +287,6 @@ export default {
   padding-bottom: 64px;
 
   max-width: 700px;
-}
-.info-title {
-  font-weight: 800;
-  font-size: 1.5rem;
 }
 .info-text {
   font-weight: 400;
@@ -327,13 +313,6 @@ export default {
 .skill-icon {
   padding-bottom: 8px;
 }
-.skill-title {
-  font-weight: 600;
-  font-size: 1.3rem;
-
-  margin-top: 0px;
-  margin-bottom: 16px;
-}
 .skill-card-head {
   margin-top: 16px;
   margin-bottom: 0px;
@@ -354,12 +333,9 @@ export default {
 
   max-width: 700px;
 }
-.contact-me-title {
-  font-weight: 800;
-  font-size: 1.5rem;
-}
-.contact-me-text {
-  font-weight: 400;
+
+small {
+  line-height: 1.2 !important;
 }
 
 </style>

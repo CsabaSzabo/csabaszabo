@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="198px" height="181px" viewBox="0 0 198 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>CSSZ logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="CSSZ-logo" transform="translate(0.000000, -38.000000)">
+            <path d="M23,43 C48.4850802,56.3333333 73.8184135,63 99,63 C124.181586,63 149.51492,56.3333333 175,43 C187.666667,79.6666667 194,108 194,128 C194,148 187.666667,176.333333 175,213 C152.045675,199.666667 127.386244,193 101.021709,193 C74.6571734,193 48.6499371,199.666667 23,213 C10.3333333,176.333333 4,148 4,128 C4,108 10.3333333,79.6666667 23,43 Z" id="Rectangle" stroke="#34495E" stroke-width="7" fill="#80CBC4"></path>
+            <text id="CSSZ" font-family="DINAlternate-Bold, DIN Alternate" font-size="72" font-weight="bold" fill="#34495E">
+                <tspan x="19.484375" y="152">CSSZ</tspan>
+            </text>
+            <g id="Lines" transform="translate(0.751067, 0.900335)" stroke="#34495E" stroke-opacity="0.25" stroke-width="3">
+                <line x1="2.00934098" y1="193.236737" x2="128.022308" y2="111.256665" id="Path" transform="translate(64.611152, 152.218097) rotate(66.102584) translate(-64.611152, -152.218097) "></line>
+                <line x1="12.0905527" y1="182.066414" x2="187.615248" y2="67.3359419" id="Path" transform="translate(99.878922, 124.570530) rotate(66.102584) translate(-99.878922, -124.570530) "></line>
+                <line x1="18.4928482" y1="159.799863" x2="192.440555" y2="46.3965459" id="Path" transform="translate(105.606819, 103.396546) rotate(66.102584) translate(-105.606819, -103.396546) "></line>
+                <line x1="5.2747581" y1="203.304887" x2="180.136134" y2="91.6424526" id="Path" transform="translate(93.017572, 147.320431) rotate(65.562074) translate(-93.017572, -147.320431) "></line>
+                <line x1="75.8613354" y1="138.573691" x2="195.386037" y2="60.0003047" id="Path" transform="translate(135.722371, 99.500305) rotate(66.102584) translate(-135.722371, -99.500305) "></line>
+            </g>
+        </g>
+    </g>
+</svg>

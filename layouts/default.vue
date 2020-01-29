@@ -1,6 +1,21 @@
 <template>
   <v-app>
 
+    <!-- Header -->
+    <v-app-bar flat class="secondary cssz-appbar">
+
+      <v-container>
+        <v-row class="align-center">
+          <nuxt-link class="mt-3" to="/">
+            <img :src="$vuetify.theme.dark ? '/img/logo-CSSZ-v1-48.png' : '/img/logo-CSSZ-v3-48.png'">
+          </nuxt-link>
+          <v-spacer></v-spacer>
+          <v-btn depressed to="/blog">Blog</v-btn>
+        </v-row>
+      </v-container>
+      
+    </v-app-bar>
+
     <!-- Content -->
     <v-content>
       <v-container fluid class="pr-0 pl-0">
@@ -11,24 +26,23 @@
     <!-- Footer -->
     <v-footer dark padless>
       <v-card class="flex" flat tile>
-        <v-card-title class="footer-card-title deep-orange ">
-          <strong class="subheading mr-0 mr-sm-3 mr-md-5">Get connected with me!</strong>
+        <v-card-title class="footer-card-title secondary py-6">
+          <strong class="subheading mr-0 mr-sm-3 mr-md-5 text--primary">Get connected with me!</strong>
 
           <v-btn
             v-for="socialItem in socialItems"
             :key="socialItem"
             class="mx-4"
-            dark
             icon
           >
             <a :href="socialItem.link" target="_blank" class="a-clean">
-              <v-icon large>{{ socialItem.icon }}</v-icon>
+              <v-icon class="text--primary" large>{{ socialItem.icon }}</v-icon>
             </a>
           </v-btn>
         </v-card-title>
 
         <v-card-text class="py-2 white--text text-center">
-          {{ new Date().getFullYear() }} — Made with <strong>Nuxt.js</strong> and <strong>Vuetify</strong> (my favourite frameworks)
+          {{ new Date().getFullYear() }} — Made with <strong>Nuxt.js</strong> and <strong>Vuetify</strong> ({{$vuetify.theme.dark ? "dark mode" : "light mode"}})
         </v-card-text>
       </v-card>
     </v-footer>
@@ -95,5 +109,8 @@ export default {
 .a-clean {
   color: white;
   text-decoration: none;
+}
+.cssz-appbar {
+  background: transparent;
 }
 </style>
