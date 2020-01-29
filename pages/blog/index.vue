@@ -32,8 +32,8 @@ export default {
   data() {
     return {
       meta: {
-        title: 'Csaba Szabo - Front-End Developer',
-        description: 'I’m a Front-End Developer, SEO and Analytics expert based in Budapest.',
+        title: 'Csaba Szabo - Frontend Developer',
+        description: 'I’m a Frontend Developer, SEO and Analytics expert based in Budapest.',
       }
     }
   },

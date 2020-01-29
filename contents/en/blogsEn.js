@@ -1,4 +1,4 @@
 export default [
   // 'bacon-ipsum',
-  'soon',
+  'dark-mode-for-website-with-nuxtjs-and-vuetify',
 ]

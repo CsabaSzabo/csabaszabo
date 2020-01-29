@@ -3,7 +3,7 @@
 
     <!-- Introduction -->
     <div class="intro-section text-center px-3">
-      <h1 class="text--primary">Csaba&nbsp;Szabo, Front-End&nbsp;Developer</h1>
+      <h1 class="text--primary">Csaba&nbsp;Szabo, Frontend&nbsp;Developer</h1>
       <div class="intro-description text--secondary">
         I love to build websites, which are
         useable, indexable, fast, measurable and reliable.
@@ -34,7 +34,7 @@
           <v-card class="skill-card skill-card-content">
             <div class="text-center">
               <v-icon large class="skill-icon">mdi-monitor-cellphone</v-icon>
-              <h3 class="text--primary">Front-end Development</h3>
+              <h3 class="text--primary">Frontend Development</h3>
 
               <p class="skill-p-1">I like to code and build websites, which are more than a shiny design. I like to build functional websites which have the same capabilities as a desktop or mobile app.</p>
 
