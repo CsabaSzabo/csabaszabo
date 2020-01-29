@@ -1,3 +1,4 @@
 export default [
-  'bacon-ipsum',
+  // 'bacon-ipsum',
+  'soon',
 ]
