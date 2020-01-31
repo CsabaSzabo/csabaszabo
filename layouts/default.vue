@@ -93,7 +93,7 @@ export default {
       
       try {
         // Chrome & Firefox
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        darkMediaQuery.addEventListener('change', (e) => {
           this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
         });
       } catch (e1) {

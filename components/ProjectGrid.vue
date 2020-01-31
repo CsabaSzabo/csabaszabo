@@ -47,7 +47,7 @@ export default {
       },
       {
         title: 'EVDB.io (under development)',
-        description: 'An international version of villanyautok.com, with new technology stakc and new features. Currently under development.',
+        description: 'An international version of villanyautok.com, with new technology stack and new features. Currently under development.',
         src: '/img/project-evdb_small@1x.png',
         projectLink: '/project-evdb',
       },

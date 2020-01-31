@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       title: 'EVDB.io (under development)',
-      description: 'An international version of villanyautok.com, with new technology stakc and new features. Currently under development.',
+      description: 'An international version of villanyautok.com, with new technology stack and new features. Currently under development.',
       longDescription: `
         <h3>Features</h3>
         <p>The EVDB.io lists all the new and used electric cars across Europe. It supports two langauges and markets (Hungary and UK).</p>
