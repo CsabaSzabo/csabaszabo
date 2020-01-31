@@ -1,15 +1,36 @@
 <template>
   <v-avatar size="150">
     <img
-      class="CsabaszaboImage"
+      id="csabaszabo-image"
       alt="Csaba Szabo"
-      src="/img/csaba_normal.jpg"
+      src="/img/csaba_150@1x.jpg"
     />
   </v-avatar>
 </template>
 
 <style>
-.CsabaszaboImage {
-  width: 300px;
+
+/*****
+* Retina image handling
+*/
+
+/* Normal Resolution CSS */
+#csabaszabo-image {
+  content:url('/img/csaba_150@1x.jpg')
 }
+
+/* HD/Retina CSS */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min--moz-device-pixel-ratio: 1.25),
+only screen and ( -o-min-device-pixel-ratio: 1.25/1),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx)
+{
+	#csabaszabo-image {
+    content:url('/img/csaba_150@2x.jpg')
+  }
+}
+
 </style>

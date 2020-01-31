@@ -9,6 +9,7 @@
           <nuxt-link class="mt-3" to="/">
             <img
               class="big-logo-img"
+              alt="CsabaSzabo logo"
               :id="$vuetify.theme.dark ? 'big-logo-img-dark' : 'big-logo-img-light'"
               :src="$vuetify.theme.dark ? '/img/logo-csabaszabo-darknobg-48px@1x.png' : '/img/logo-csabaszabo-lightnobg-48px@1x.png'"
             >
@@ -38,8 +39,9 @@
             :key="socialItem.id"
             class="mx-4"
             icon
+            :aria-label="socialItem.ariaLabel"
           >
-            <a :href="socialItem.link" target="_blank" class="a-clean">
+            <a :href="socialItem.link" target="_blank" rel="noopener" class="a-clean">
               <v-icon class="text--primary" large>{{ socialItem.icon }}</v-icon>
             </a>
           </v-btn>
@@ -74,11 +76,11 @@ export default {
       right: true,
       title: 'Csaba Szabo',
       socialItems: [
-        { id: 'social-item-1', icon: 'mdi-github-circle', link: 'https://github.com/CsabaSzabo' },
-        { id: 'social-item-2', icon: 'mdi-linkedin-box', link: 'https://www.linkedin.com/in/csaba-sz' },
-        { id: 'social-item-3', icon: 'mdi-medium', link: 'https://medium.com/@csabb' },
-        { id: 'social-item-4', icon: 'mdi-stack-overflow', link: 'https://stackoverflow.com/users/1173971/szab%C3%B3-csaba' },
-        { id: 'social-item-5', icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba' },
+        { id: 'social-item-1', icon: 'mdi-github-circle', link: 'https://github.com/CsabaSzabo', ariaLabel: 'GitHub' },
+        { id: 'social-item-2', icon: 'mdi-linkedin-box', link: 'https://www.linkedin.com/in/csaba-sz', ariaLabel: 'LinkedIn' },
+        { id: 'social-item-3', icon: 'mdi-medium', link: 'https://medium.com/@csabb', ariaLabel: 'Medium' },
+        { id: 'social-item-4', icon: 'mdi-stack-overflow', link: 'https://stackoverflow.com/users/1173971/szab%C3%B3-csaba', ariaLabel: 'StackOverflow' },
+        { id: 'social-item-5', icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba', ariaLabel: 'E-mail' },
       ],
     }
   },

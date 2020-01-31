@@ -18,11 +18,11 @@
         <p class="info-text text--secondary">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, I did Web Development during the last 2 years.</p>
       
         <div class="info-section-header text-primary">I worked in various roles:</div>
-        <div class="info-text text--secondary">Web and Data Engineering (<a href="https://aroundsound.com/" target="_blank">aroundsound.com</a>,&nbsp;<a href="http://villanyautok.com/" target="_blank">villanyautok.com</a>, <a href="https://evdb.io" target="_blank">evdb.io</a>)</div>
-        <div class="info-text text--secondary">Product management (<a href="https://www.bankracio.hu/" target="_blank">bankracio.hu</a>&nbsp;/&nbsp;<a href="https://www.money.hu/" target="_blank">money.hu</a>)</div>
-        <div class="info-text text--secondary">Product management (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
-        <div class="info-text text--secondary">App release and Software engineering (<a href="http://skyscanner.com/" target="_blank">Skyscanner</a>)</div>
-        <div class="info-text text--secondary">Software testing (<a href="https://cocktailflow.com/" target="_blank">CocktailFlow</a>, <a href="https://www.redbull.com/" target="_blank">RedBullTV</a>, <a href="http://gneo.co/" target="_blank">Gneo</a>, Skyscanner apps, ...)</div>
+        <div class="info-text text--secondary">Web and Data Engineering (<a href="https://aroundsound.com/" target="_blank" rel="noopener">aroundsound.com</a>,&nbsp;<a href="http://villanyautok.com/" target="_blank" rel="noopener">villanyautok.com</a>, <a href="https://evdb.io" target="_blank" rel="noopener">evdb.io</a>)</div>
+        <div class="info-text text--secondary">Product management (<a href="https://www.bankracio.hu/" target="_blank" rel="noopener">bankracio.hu</a>&nbsp;/&nbsp;<a href="https://www.money.hu/" target="_blank" rel="noopener">money.hu</a>)</div>
+        <div class="info-text text--secondary">Product management (<a href="http://skyscanner.com/" target="_blank" rel="noopener">Skyscanner</a>)</div>
+        <div class="info-text text--secondary">App release and Software engineering (<a href="http://skyscanner.com/" target="_blank" rel="noopener">Skyscanner</a>)</div>
+        <div class="info-text text--secondary">Software testing (<a href="https://cocktailflow.com/" target="_blank" rel="noopener">CocktailFlow</a>, <a href="https://www.redbull.com/" target="_blank" rel="noopener">RedBullTV</a>, <a href="http://gneo.co/" target="_blank" rel="noopener">Gneo</a>, Skyscanner apps, ...)</div>
       </v-col>
     </v-container>
 
@@ -150,9 +150,22 @@
             label="Additional notes"
           ></v-textarea>
           
+          <!-- Send button -->
+          <v-btn
+            :disabled="sendButtonDisabled"
+            class="mr-4"
+            @click="writeNewContact">
+            send
+          </v-btn>
 
-          <v-btn class="mr-4" @click="writeNewContact">send</v-btn>
-          <v-btn class="secondary" @click="clear">clear</v-btn>
+          <!-- Clear button -->
+          <v-btn
+            v-if="name || email || selectedProject || notes"
+            class="secondary"
+            @click="clear">
+            clear
+          </v-btn>
+
         </form>
         <div v-else-if="!formSubmittedError" class="pt-3">
           <p class="headline text--secondary">Thanks for reaching out. I'll contact you soon, but you could write an email to csaba.szabo4[at]gmail[dot]com if it's really important.</p>
@@ -225,6 +238,14 @@ export default {
       !this.$v.email.required && errors.push('E-mail is required')
       return errors
     },
+
+    sendButtonDisabled() {
+      var areTextsEmpty = (this.name === '' || this.email === '' || this.selectedProject === null);
+      var isNameError = this.nameErrors ? this.nameErrors.length > 0 : false;
+      var isEmailError = this.emailErrors ? this.emailErrors.length > 0 : false;
+      var isProjectError = this.selectErrors ? this.selectErrors.length > 0 : false;
+      return areTextsEmpty || isNameError || isEmailError || isProjectError;
+    }
   },
 
   methods: {

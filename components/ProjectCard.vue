@@ -21,7 +21,7 @@
       <v-spacer></v-spacer>
 
       <!-- Open details -->
-      <v-btn outlined large color="accent" :to="projectLink" class="mr-1">
+      <v-btn outlined large color="primary" :to="projectLink" class="mr-1">
         <v-icon left>mdi-information-outline</v-icon>Details
       </v-btn>
 

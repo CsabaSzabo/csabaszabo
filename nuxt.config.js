@@ -144,12 +144,12 @@ module.exports = {
           accent: colors.teal.accent4,
 
           error: colors.deepOrange.accent2,
-          info: colors.grey.darken3,
+          info: '#1976d2',
           success: colors.green.accent3,
           warning: colors.amber.base,
         },
         light: {
-          primary: '#1976D2',
+          primary: '#0157BB',
           secondary: colors.teal.lighten3,
           accent: colors.teal.accent4,
 
