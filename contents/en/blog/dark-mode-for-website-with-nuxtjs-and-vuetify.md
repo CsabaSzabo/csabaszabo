@@ -11,7 +11,7 @@ description: |
 
 This website is my portfolio and blog website, which is built with [Nuxt.js](https://nuxtjs.org/) and [Vuetfiy](https://vuetifyjs.com/). I added the dark/light mode support to this website and I summarise this work in this blogpost.
 
-This technical blogpost connects to a less technical post on Medium about [Does your website support dark mode?](https://medium.com/@csabb), where I listed 20 well-known products and checked if they support dark mode in their apps and website.
+This technical blogpost connects to a less technical post on Medium about [Does your website support dark mode?](https://medium.com/@csabb/does-your-website-support-dark-mode-7ed416e7d90f), where I listed 20 well-known products and checked if they support dark mode in their apps and website.
 
 ## Dark mode detection
 
@@ -37,11 +37,11 @@ In summary, the `prefers-color-scheme` CSS media feature is used to detect if th
 }
 ```
 
-In theory, that's it, however it could be different for different UI frameworks. Let's see how it works for Vuetify (and Nuxt.js).
+In theory that's it, however, it could be different for different UI frameworks. Let's see how it works for Vuetify (and Nuxt.js).
 
 ## Vuetify has a dark/light mode, but it's not exactly what you would expect
 
-Vuetify support [themes](https://vuetifyjs.com/en/customization/theme), it supports light and dark mode in your codebase and you could change it programatically.
+Vuetify support [themes](https://vuetifyjs.com/en/customization/theme), it supports light and dark mode in your codebase and you could change it programmatically.
 
 ```javascript
 
@@ -77,19 +77,19 @@ vuetify: {
 }
 ```
 
-And this is how you change the dark/light mode programatically.
+And this is how you change the dark/light mode programmatically.
 
 ```javascript
 
 this.$vuetify.theme.dark = true;
 ```
 
-The problem with this solution, is that Vuetify doesn't follow the operation system light/dark mode settings. As most of the mobile apps works and Apple Human Guideline supports, your app should follow the dark/light mode of the devices.
+The problem with this solution is that Vuetify doesn't follow the operation system light/dark mode settings. As most of the mobile apps works and Apple Human Guideline supports, your app should follow the dark/light mode of the devices.
 Vuetify doesn't have this functionality and even there's a close feature request about this on [GitHub](https://github.com/vuetifyjs/vuetify/issues/7932).
 
 ## Automatic dark/light mode switch
 
-You have to set a default theme to your application in `nuxt.config.js`. I would suggest you to set it to light, as I believe most of the users use their device in light mode.
+You have to set a default theme to your application in `nuxt.config.js`. I would suggest you set it to light, as I believe most of the users use their device in light mode.
 
 ```javascript
 
@@ -102,7 +102,7 @@ You have to set a default theme to your application in `nuxt.config.js`. I would
   },
 ```
 
-We should check if the devices is in dark/light mode, when we start the Nuxt.js application. I call this logic in the `mounted` Vue Lifecycle event, however I had to add a 0 seconds timeout, as otherwise the light-dark mode switch doesn't work well. You could try it if you remove that 0 seconds timout.
+We should check if the device is in dark/light mode when we start the Nuxt.js application. I call this logic in the `mounted` Vue Lifecycle event, however, I had to add a 0 seconds timeout, as otherwise, the light-dark mode switch doesn't work well. You could try it if you remove that 0 seconds timeout.
 
 ```javascript
 
@@ -115,7 +115,7 @@ if (darkMediaQuery.matches) {
 }
 ```
 
-Besides setting the dark/light mode, we should listen to theme change, as users could change the devices themse settings and it could change by the operation system, when the sune comes up or goes down.
+Besides setting the dark/light mode, we should listen to theme change, as users could change the device theme settings and it could change by the operating system when the sun comes up or goes down.
 
 ```javascript
 
@@ -208,7 +208,7 @@ Some examples:
 </v-btn>
 ```
 
-These text and background color changes could be a big job, if you haven't used Vuetify theme colors in your project, but it's a very quick job if you use them.
+These text and background color changes could be a big job if you haven't used Vuetify theme colors in your project, but it's a very quick job if you use them.
 
 For images, you could set the source of the image, based on the vuetify theme property `$vuetify.theme.dark`.
 
@@ -217,7 +217,7 @@ For images, you could set the source of the image, based on the vuetify theme pr
 <img :src="$vuetify.theme.dark ? '/img/logo-CSSZ-v1-48.png' : '/img/logo-CSSZ-v3-48.png'">
 ```
 
-That's it. If you used Vuetify themse before in your project, then it's a quick task for you, if you haven't, then it's a bit bigger work, but you'll have a much more consistent coloring in your website project.
+That's it. If you used Vuetify theme before in your project, then it's a quick task for you, if you haven't, then it's a bit bigger work, but you'll have a much more consistent coloring in your website project.
 
 
 I hope you enjoyed reading this blogpost.
