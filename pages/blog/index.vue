@@ -1,13 +1,17 @@
 <template>
-  <div class="page-index">
+  <v-layout column justify-center align-center class="blogpost-layout">
+    <!-- Breadcrumbs -->
+    <Breadcrumbs :breadcrumbs="breadcrumbs"></Breadcrumbs>
+    
     <div class="container">
       <BlogSection :blogs="blogs"/>
     </div>
-  </div>
+  </v-layout>
 </template>
 
 <script>
 import BlogSection from "~/components/blog/Sections/BlogSection"
+import Breadcrumbs from '~/components/Breadcrumbs'
 
 import blogsEn from '~/contents/en/blogsEn.js'
 
@@ -34,14 +38,13 @@ export default {
       meta: {
         title: 'Csaba Szabo - Frontend Developer',
         description: 'I’m a Frontend Developer, SEO and Analytics expert based in Budapest.',
-      }
+      },
     }
   },
   
-  components: { BlogSection },
-
-  transition: {
-    name: 'slide-fade'
+  components: {
+    BlogSection,
+    Breadcrumbs
   },
 
   head () {
@@ -65,6 +68,12 @@ export default {
   computed: {
     ogImage: function () {
       return;
+    },
+    breadcrumbs() {
+      return [
+        { text: 'Home', href: '/' },
+        { text: 'Blog' },
+      ];
     }
   }
 }

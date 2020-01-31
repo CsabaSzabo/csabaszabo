@@ -23,6 +23,7 @@ There are official documents around how to handle dark mode on websites from the
 In summary, the `prefers-color-scheme` CSS media feature is used to detect if the browser is in dark or light mode.
 
 ```javascript
+
 .textClass {
   color: rgba(0, 0, 0, 0.87);
   background-color: rgb(48, 48, 48);
@@ -43,41 +44,43 @@ In theory, that's it, however it could be different for different UI frameworks.
 Vuetify support [themes](https://vuetifyjs.com/en/customization/theme), it supports light and dark mode in your codebase and you could change it programatically.
 
 ```javascript
+
 // nuxt.config.js
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      // default theme is light mode
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue,
-          secondary: colors.teal.darken4,
-          accent: colors.teal.accent4,
+vuetify: {
+  customVariables: ['~/assets/variables.scss'],
+  theme: {
+    // default theme is light mode
+    dark: false,
+    themes: {
+      dark: {
+        primary: colors.blue,
+        secondary: colors.teal.darken4,
+        accent: colors.teal.accent4,
 
-          error: colors.deepOrange.accent2,
-          info: colors.grey.darken3,
-          success: colors.green.accent3,
-          warning: colors.amber.base,
-        },
-        light: {
-          primary: '#1976D2',
-          secondary: colors.teal.lighten3,
-          accent: colors.teal.accent4,
+        error: colors.deepOrange.accent2,
+        info: colors.grey.darken3,
+        success: colors.green.accent3,
+        warning: colors.amber.base,
+      },
+      light: {
+        primary: '#1976D2',
+        secondary: colors.teal.lighten3,
+        accent: colors.teal.accent4,
 
-          error: '#FF5252',
-          info: '#2196F3',
-          success: '#4CAF50',
-          warning: '#FFC107',
-        }
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
       }
     }
-  },
+  }
+}
 ```
 
 And this is how you change the dark/light mode programatically.
 
 ```javascript
+
 this.$vuetify.theme.dark = true;
 ```
 
@@ -89,6 +92,7 @@ Vuetify doesn't have this functionality and even there's a close feature request
 You have to set a default theme to your application in `nuxt.config.js`. I would suggest you to set it to light, as I believe most of the users use their device in light mode.
 
 ```javascript
+
 // nuxt.config.js
   vuetify: {
     theme: {
@@ -101,6 +105,7 @@ You have to set a default theme to your application in `nuxt.config.js`. I would
 We should check if the devices is in dark/light mode, when we start the Nuxt.js application. I call this logic in the `mounted` Vue Lifecycle event, however I had to add a 0 seconds timeout, as otherwise the light-dark mode switch doesn't work well. You could try it if you remove that 0 seconds timout.
 
 ```javascript
+
 const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 if (darkMediaQuery.matches) {
@@ -113,6 +118,7 @@ if (darkMediaQuery.matches) {
 Besides setting the dark/light mode, we should listen to theme change, as users could change the devices themse settings and it could change by the operation system, when the sune comes up or goes down.
 
 ```javascript
+
 const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 darkMediaQuery.addEventListener('change', (e) => {
@@ -122,67 +128,70 @@ darkMediaQuery.addEventListener('change', (e) => {
 
 I put this logic into the default layout, as I use only of layout.
 ```javascript
-  mounted() {
-    this.initDarkMode();
+
+mounted() {
+  this.initDarkMode();
+},
+
+methods: {
+  initDarkMode() {
+    const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    darkMediaQuery.addEventListener('change', (e) => {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    });
+
+    if (darkMediaQuery.matches) {
+      console.log('change default light to dark theme');
+      // need to set 0 sec timeout to set the dark more after mounted event, due to some bug in the framework
+      setTimeout(() => this.$vuetify.theme.dark = true, 0);
+    }
   },
-
-  methods: {
-    initDarkMode() {
-      const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-      darkMediaQuery.addEventListener('change', (e) => {
-        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      });
-
-      if (darkMediaQuery.matches) {
-        console.log('change default light to dark theme');
-        // need to set 0 sec timeout to set the dark more after mounted event, due to some bug in the framework
-        setTimeout(() => this.$vuetify.theme.dark = true, 0);
-      }
-    },
-  }
+}
 ```
 
 ## Let's fix the colors and images
 
 From the previous section we set the light and dark theme correctly for the page. Vuetify supports themes, where you could set the theme colors for dark and light modes.
 ```javascript
+
 // nuxt.config.js
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      // default theme is light mode
-      dark: false,
-      themes: {
-        dark: {
-          primary: colors.blue,
-          secondary: colors.teal.darken4,
-          accent: colors.teal.accent4,
+vuetify: {
+  customVariables: ['~/assets/variables.scss'],
+  theme: {
+    // default theme is light mode
+    dark: false,
+    themes: {
+      dark: {
+        primary: colors.blue,
+        secondary: colors.teal.darken4,
+        accent: colors.teal.accent4,
 
-          error: colors.deepOrange.accent2,
-          info: colors.grey.darken3,
-          success: colors.green.accent3,
-          warning: colors.amber.base,
-        },
-        light: {
-          primary: '#1976D2',
-          secondary: colors.teal.lighten3,
-          accent: colors.teal.accent4,
+        error: colors.deepOrange.accent2,
+        info: colors.grey.darken3,
+        success: colors.green.accent3,
+        warning: colors.amber.base,
+      },
+      light: {
+        primary: '#1976D2',
+        secondary: colors.teal.lighten3,
+        accent: colors.teal.accent4,
 
-          error: '#FF5252',
-          info: '#2196F3',
-          success: '#4CAF50',
-          warning: '#FFC107',
-        }
+        error: '#FF5252',
+        info: '#2196F3',
+        success: '#4CAF50',
+        warning: '#FFC107',
       }
     }
   }
+}
 ```
 
 You should use these themes for all of your HTML elements. You should use `text--primary`, `text--secondary` and `text--{{theme-color}}` classse for text colors and `primary`, `secondary`,  and `{{theme-color}}` for background colors.
 
 Some examples:
 ```html
+
 <!-- text with primary color -->
 <h2 class="text--primary text-center pb-4">Interest areas & Skills</h2>
 
@@ -204,6 +213,7 @@ These text and background color changes could be a big job, if you haven't used 
 For images, you could set the source of the image, based on the vuetify theme property `$vuetify.theme.dark`.
 
 ```html
+
 <img :src="$vuetify.theme.dark ? '/img/logo-CSSZ-v1-48.png' : '/img/logo-CSSZ-v3-48.png'">
 ```
 

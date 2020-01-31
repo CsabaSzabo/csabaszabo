@@ -61,7 +61,7 @@ ul{
 }
 
 li{
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 
   @media (min-width: $screen-sm){
     margin-bottom: 0;
@@ -91,7 +91,7 @@ h1,.h1{
 
 h2,.h2{
   font-size: $fs-h2;
-  color: $secondary;
+  // color: $secondary;
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 1rem;

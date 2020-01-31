@@ -2,3 +2,17 @@
 //
 // The variables you want to modify
 // $font-size-root: 20px;
+
+.dynamicMarkdown code {
+  box-shadow: none;
+}
+
+.v-application code {
+  font-weight: 500;
+  line-height: 24px;
+  white-space: pre;
+}
+
+.v-btn:not(.v-btn--text):not(.v-btn--outlined).v-btn--active:before {
+  opacity: 0;
+}

@@ -7,10 +7,10 @@
         :width="'952'"
         :height="'509'"
         :alt="blog.cardAlt" />
-      <h3 class="blog__title">
+      <h3 class="blog__title text--primary">
         {{ blog.title }}
       </h3>
-      <p class="blog__description">
+      <p class="blog__description text--secondary">
         {{ blog.description }}
       </p>
     </nuxt-link>
@@ -45,12 +45,6 @@ export default {
       }
     }
 
-    &:hover {
-      .blog__title {
-        color: $primary;
-      }
-    }
-
     &__title {
       font-family: 'Tiempos Headline', Arial, sans-serif;
       color: $secondary;
@@ -61,7 +55,6 @@ export default {
 
     &__description {
       margin: 0;
-      color: $grey-2;
     }
   }
 </style>

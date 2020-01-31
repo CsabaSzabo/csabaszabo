@@ -1,10 +1,7 @@
 <template>
   <section>
-    <div class="blogs__top">
-      <div>
-        <h2>Posts</h2>
-        <span class="emoji-title emoji--writing"/>
-      </div>
+    <div class="blogs__top text-center">
+      <h1 class="blogs-title text--primary">Blogposts</h1>
     </div>
     <ul class="blogs">
       <blog-card
@@ -40,8 +37,13 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 4rem;
   }
 }
+
+.blogs-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 </style>
 

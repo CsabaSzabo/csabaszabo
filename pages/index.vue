@@ -14,7 +14,7 @@
     <!-- Info section -->
     <v-container fluid class="secondary">
       <v-col class="info-section">
-        <h3 class="text--primary">Hi, I'm Csaba. Nice to meet you.</h3>
+        <h3 class="text--primary">Hi, nice to meet you.</h3>
         <p class="info-text text--secondary">I'm an experienced Product Engineer with 6+ years of Software Product Development experience in various roles, I did Web Development during the last 2 years.</p>
       
         <div class="info-section-header text-primary">I worked in various roles:</div>

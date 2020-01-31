@@ -3,10 +3,11 @@
   <v-card class="project-card">
     <v-img
       :src="src"
-      class="white--text align-end"
-      gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+      class="white--text align-end project-card-image"
+      gradient="to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1)"
       height="250px"
       aspect-ratio=1.6
+      @click="openProjectDetails"
     >
     </v-img>
 
@@ -18,47 +19,10 @@
 
     <v-card-actions>
       <v-spacer></v-spacer>
-      <!-- Details dialog -->
-      <v-dialog v-model="dialog" width="1152" :fullscreen="carouselFullscreen">
-        <template v-slot:activator="{ on }">
-          <v-btn outlined color="primary" v-on="on" class="ml-1">
-            <v-icon left>mdi-information-outline</v-icon>Details
-          </v-btn>
-        </template>
 
-        <v-card>
-          <v-card-title class="headline secondary" primary-title>
-            {{title}}
-            <v-spacer></v-spacer>
-            <v-icon left @click="dialog = false">mdi-close</v-icon>
-          </v-card-title>
-          
-          <v-card-text class="project-details-subtitle">{{description}}</v-card-text>
-
-          <v-carousel show-arrows :hide-delimiters="hideDelimiters" :height="carouselHeight" :style="carouselStyle">
-            <v-carousel-item v-for="(screenshot,i) in screenshots" :key="i" :src="screenshot.src"></v-carousel-item>
-          </v-carousel>
-
-          <v-card-text v-html="longDescription" class="project-details-card-text"></v-card-text>
-
-          <v-divider></v-divider>
-
-          <v-card-actions>
-            <v-spacer></v-spacer>
-            <v-btn
-              color="primary"
-              text
-              @click="dialog = false"
-            >
-              Close
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-
-      <!-- Open website -->
-      <v-btn v-if="link" outlined color="accent" @click="openWebsite" :href="link" target="_blank" class="mr-1">
-        <v-icon left>mdi-open-in-new</v-icon>Open 
+      <!-- Open details -->
+      <v-btn outlined large color="accent" :to="projectLink" class="mr-1">
+        <v-icon left>mdi-information-outline</v-icon>Details
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -83,20 +47,10 @@ export default {
       type: String,
       required: true,
     },
-    longDescription: {
+    projectLink: {
       type: String,
       required: false,
       default: null,
-    },
-    link: {
-      type: String,
-      required: false,
-      default: null,
-    },
-    screenshots: {
-      type: Array,
-      required: false,
-      default: [],
     },
   },
 
@@ -145,12 +99,8 @@ export default {
   },
 
   methods: {
-    openWebsite() {
-      console.log('openWebsite');
-      this.$nuxt.router
-    },
-    learnMore() {
-      console.log('learnMore');
+    openProjectDetails() {
+      this.$router.push(this.projectLink);
     },
   }
 
@@ -173,9 +123,11 @@ export default {
   margin: auto;
 }
 .project-details-card-text {
-  max-width: 700px;
   padding-top: 28px !important;
   margin: auto;
+}
+.project-card-image {
+  cursor: pointer;
 }
 
 </style>
