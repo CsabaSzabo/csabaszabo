@@ -6,6 +6,14 @@ const Mode = require("frontmatter-markdown-loader/mode")
 const MarkdownIt = require('markdown-it')
 const mip = require('markdown-it-prism')
 
+function getPaths (lang, type) {
+  let initial = lang
+  if (lang === 'en') { initial = '' }
+  return fs.readdirSync(path.resolve(__dirname, 'contents', `${lang}/${type}`))
+    .filter(filename => path.extname(filename) === '.md')
+    .map(filename => `${initial}/${type}/${path.parse(filename).name}`)
+}
+
 const md = new MarkdownIt({
   html: true,
   typographer: true
@@ -190,4 +198,11 @@ module.exports = {
       });
     }
   },
+
+  generate: {
+    routes: [
+      '404'
+    ]
+    .concat(getPaths('en', 'blog'))
+  }
 }
