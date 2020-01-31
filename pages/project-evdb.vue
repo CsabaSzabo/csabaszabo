@@ -30,12 +30,12 @@ export default {
         <p>The site is built on Vue.js + Nuxt.js with Vuetify CSS framework. The site is hosted on Google App Engine, the database is Firestore DB.</p>
       `,
       screenshots: [
-        { src: '/img/evdb/evdb-1.png', },
-        { src: '/img/evdb/evdb-2.png', },
-        { src: '/img/evdb/evdb-3.png', },
-        { src: '/img/evdb/evdb-4.png', },
-        { src: '/img/evdb/evdb-5.png', },
-        { src: '/img/evdb/evdb-6.png', },
+        { url: '/img/evdb/evdb-1.png', },
+        { url: '/img/evdb/evdb-2.png', },
+        { url: '/img/evdb/evdb-3.png', },
+        { url: '/img/evdb/evdb-4.png', },
+        { url: '/img/evdb/evdb-5.png', },
+        { url: '/img/evdb/evdb-6.png', },
       ],
       thumbnails: [
         '/img/evdb/evdb-1-thumb.png',

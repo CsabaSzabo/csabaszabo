@@ -36,13 +36,13 @@ export default {
         <p>The site is hosted on Firebase hosting, server-side rendering for some pages is served by Firebase Cloud Functions.</p>
       `,
       screenshots: [
-        { src: '/img/villanyautok/villanyautok-1.png', },
-        { src: '/img/villanyautok/villanyautok-2.png', },
-        { src: '/img/villanyautok/villanyautok-3.png', },
-        { src: '/img/villanyautok/villanyautok-4.png', },
-        { src: '/img/villanyautok/villanyautok-5.png', },
-        { src: '/img/villanyautok/villanyautok-6.png', },
-        { src: '/img/villanyautok/villanyautok-7.png', },
+        { url: '/img/villanyautok/villanyautok-1.png', },
+        { url: '/img/villanyautok/villanyautok-2.png', },
+        { url: '/img/villanyautok/villanyautok-3.png', },
+        { url: '/img/villanyautok/villanyautok-4.png', },
+        { url: '/img/villanyautok/villanyautok-5.png', },
+        { url: '/img/villanyautok/villanyautok-6.png', },
+        { url: '/img/villanyautok/villanyautok-7.png', },
       ],
       thumbnails: [
         '/img/villanyautok/villanyautok-1-thumb.png',
