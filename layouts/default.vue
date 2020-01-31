@@ -90,10 +90,22 @@ export default {
   methods: {
     initDarkMode() {
       const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-
-      darkMediaQuery.addEventListener('change', (e) => {
-        this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
-      });
+      
+      try {
+        // Chrome & Firefox
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+        });
+      } catch (e1) {
+        try {
+          // Safari
+          darkMediaQuery.addListener((e) => {
+            this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+          });
+        } catch (e2) {
+          console.error(e2);
+        }
+      }
 
       if (darkMediaQuery.matches) {
         console.log('change default light to dark theme');
