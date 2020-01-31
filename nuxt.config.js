@@ -41,6 +41,9 @@ module.exports = {
       { name: 'theme-color', content: '#ffffff' },
       { name: 'robots', content: 'index, follow' },
       { property: 'og:type', content: 'profile' },
+      { property: 'og:title', content: 'Csaba Szabo - Frontend, SEO and Analytics' },
+      { property: 'og:image', content: '/img/logo-cs-light.png'},
+      { property: 'og:description', content: 'I’m a Frontend Developer, SEO and Analytics expert based in Budapest.' },
       { property: 'og:updated_time', content: builtAt }
     ],
     link: [

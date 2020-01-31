@@ -1,0 +1,5 @@
+# robots.txt for https://csabaszabo.dev
+Sitemap: https://csabaszabo.dev/sitemap.xml
+
+User-agent: *
+Disallow: /admin/

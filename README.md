@@ -1,6 +1,6 @@
 # csabaszabo
 
-> My portfolio site
+> I’m a Frontend Developer, SEO and Analytics expert based in Budapest.
 
 ## Build Setup
 
