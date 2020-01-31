@@ -26,7 +26,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content: 'I’m a Frontend Developer, SEO and Analytics expert based in Budapest.'
       },
       { name: 'msapplication-TileColor', content: '#ffffff' },
       { name: 'msapplication-TileImage', content: '/favicon/ms-icon-144x144.png' },
