@@ -36,7 +36,9 @@
               <v-icon large class="skill-icon">mdi-monitor-cellphone</v-icon>
               <h3 class="text--primary">Frontend Development</h3>
 
-              <p class="skill-p-1">I like to code and build websites, which are more than a shiny design. I like to build functional websites which have the same capabilities as a desktop or mobile app.</p>
+              <p class="skill-description">
+                I like to build functional websites, which almost have the same capability as a desktop or mobile app.
+              </p>
 
               <p class="skill-card-head">Technologies</p>
               <div>Vue.js, Nuxt.js</div>
@@ -63,7 +65,9 @@
               <v-icon large class="skill-icon">mdi-google</v-icon>
               <h3>Technical SEO</h3>
 
-              <div>I like to optimise the website for organic traffic, mainly with technical SEO work.</div>
+              <p class="skill-description">
+                I like to optimise the websites for searchibility and organic traffic, mainly with technical SEO work.
+              </p>
 
               <p class="skill-card-head">Stats</p>
               <div>Daily 15k impression and 1k click in a year (villanyautok.com)</div>
@@ -81,9 +85,12 @@
           <v-card class="skill-card skill-card-content">
             <div class="text-center">
               <v-icon large class="skill-icon">mdi-google-analytics</v-icon>
-              <h3>Analytics and Data Analysis</h3>
+              <h3 v-if="screenLg">Analytics and Data Analysis</h3>
+              <h3 v-else>Analytics and Data</h3>
 
-              <p class="skill-p-1">A good product/feature has no value if we cannot measure it. I believe that we should plan and implement the analytics events during the feature implementation, so it will be much easier to measure the performance of our product.</p>
+              <p class="skill-description">
+                A good product has good analytics. Implementating analytics is part of the feature development.
+              </p>
 
               <p class="skill-card-head">Technologies and Experience</p>
               <div>Google Analytics</div>
@@ -245,6 +252,10 @@ export default {
       var isEmailError = this.emailErrors ? this.emailErrors.length > 0 : false;
       var isProjectError = this.selectErrors ? this.selectErrors.length > 0 : false;
       return areTextsEmpty || isNameError || isEmailError || isProjectError;
+    },
+
+    screenLg() {
+      return (this.$vuetify.breakpoint.name === 'lg' || this.$vuetify.breakpoint.name === 'xl');
     }
   },
 
@@ -288,7 +299,7 @@ export default {
 
 .intro-section {
   padding-top: 80px;
-  padding-bottom: 48px;
+  padding-bottom: 96px;
 }
 .intro-description {
   font-weight: 300;
@@ -304,8 +315,8 @@ export default {
 .info-section {
   text-align: center;
   margin: auto;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   max-width: 700px;
 }
@@ -318,19 +329,30 @@ export default {
 
 /* Skill cards */
 .skills-section {
-  padding-top: 64px;
-  padding-bottom: 40px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 .skill-card-content {
   padding: 16px;
-  margin: 8px;
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
   font-weight: 300;
-
   max-width: 400px;
-  min-height: 635px;
-  
 }
+@media (min-width: 960px){
+  .skill-card-content {
+    min-height: 870px;
+  }
+}
+@media (min-width: 1264px){
+  .skill-card-content {
+    min-height: 750px;
+  }
+}
+
+
 .skill-icon {
   padding-bottom: 8px;
 }
@@ -341,16 +363,16 @@ export default {
 }
 
 .projects-section {
-  padding-top: 64px;
-  padding-bottom: 48px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 /* Contant me section */
 .contact-me-section {
   text-align: center;
   margin: auto;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 
   max-width: 700px;
 }
