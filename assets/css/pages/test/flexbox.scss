@@ -1,0 +1,50 @@
+h2 {
+  margin-top: 32px;
+  margin-bottom: 0px;
+}
+
+.cont-ac {
+  height: 300px;
+  background-color: #CCCCCC;
+}
+
+.item {
+  color: white;
+  background-color: blue;
+  margin: 5px;
+  padding: 10px;
+}
+.item-long {
+  padding-right: 100px;
+  padding-left: 100px;
+}
+.item-height-0 {
+  height: 20px;
+}
+.item-height-1 {
+  height: 40px;
+}
+.item-height-2 {
+  height: 60px;
+}
+.item-height-3 {
+  height: 80px;
+}
+.item-height-4 {
+  height: 100px;
+}
+
+.item1 {
+  $order: 2;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
+.item2 {
+  $order: 1;
+  -moz-box-ordinal-group: $order;
+  -ms-flex-order: $order;
+  -webkit-order: $order;
+  order: $order;
+}
