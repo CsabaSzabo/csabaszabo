@@ -53,6 +53,7 @@
       </v-card>
     </v-footer>
 
+    <script src="https://profile.codersrank.io/widget/widget.js"></script>
   </v-app>
 </template>
 

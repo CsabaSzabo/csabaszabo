@@ -9,6 +9,8 @@
         useable, indexable, fast, measurable and reliable.
       </div>
       <CsabaImage/>
+
+      <codersrank-widget username="csabaszabo" style="max-width: 500px; margin-right: auto; margin-left: auto; margin-top: 8px;"></codersrank-widget>
     </div>
 
     <!-- Info section -->
