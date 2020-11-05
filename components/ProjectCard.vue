@@ -1,5 +1,4 @@
 <template>
-
   <v-card class="project-card">
     <v-img
       :src="src"
@@ -112,7 +111,19 @@ export default {
 .project-card {
   max-width: 500px;
   margin: auto;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
 }
+
+.project-card:hover {
+  z-index: 3;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
 .project-details-subtitle {
   font-weight: 500;
   font-size: 20px;

@@ -1,5 +1,5 @@
 <template>
-  <v-avatar size="150">
+  <v-avatar class="csabaimage" size="150">
     <img
       id="csabaszabo-image"
       alt="Csaba Szabo"
@@ -9,6 +9,19 @@
 </template>
 
 <style>
+
+/* Animation */
+.csabaimage {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.csabaimage:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 /*****
 * Retina image handling

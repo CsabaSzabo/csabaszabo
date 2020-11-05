@@ -330,6 +330,19 @@ export default {
 }
 
 /* Skill cards */
+.skill-card {
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.skill-card:hover {
+  z-index: 3;
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
 .skills-section {
   padding-top: 96px;
   padding-bottom: 96px;
