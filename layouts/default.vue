@@ -77,11 +77,10 @@ export default {
       right: true,
       title: 'Csaba Szabo',
       socialItems: [
-        { id: 'social-item-1', icon: 'mdi-github-circle', link: 'https://github.com/CsabaSzabo', ariaLabel: 'GitHub' },
-        { id: 'social-item-2', icon: 'mdi-linkedin-box', link: 'https://www.linkedin.com/in/csaba-sz', ariaLabel: 'LinkedIn' },
-        { id: 'social-item-3', icon: 'mdi-medium', link: 'https://medium.com/@csabb', ariaLabel: 'Medium' },
-        { id: 'social-item-4', icon: 'mdi-stack-overflow', link: 'https://stackoverflow.com/users/1173971/szab%C3%B3-csaba', ariaLabel: 'StackOverflow' },
-        { id: 'social-item-5', icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba', ariaLabel: 'E-mail' },
+        { id: 'social-item-1', icon: 'mdi-github', link: 'https://github.com/CsabaSzabo', ariaLabel: 'GitHub' },
+        { id: 'social-item-2', icon: 'mdi-linkedin', link: 'https://www.linkedin.com/in/csaba-sz', ariaLabel: 'LinkedIn' },
+        { id: 'social-item-3', icon: 'mdi-stack-overflow', link: 'https://stackoverflow.com/users/1173971/szab%C3%B3-csaba', ariaLabel: 'StackOverflow' },
+        { id: 'social-item-4', icon: 'mdi-email', link: 'mailto:csaba.szabo4@gmail.com?Subject=Hello%20Csaba', ariaLabel: 'E-mail' },
       ],
     }
   },
